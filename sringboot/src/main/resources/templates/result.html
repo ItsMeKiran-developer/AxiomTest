@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Employee Management</title>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#data-table').DataTable();
+	});
+</script> -->
+</head>
+<body>
+	<div>
+		<strong>
+			<h1>EMPLOYEES DETAILS</h1>
+		</strong> <a th:href="@{/add_emp}">Add New Employee</a>
+	</div>
+	<div>
+	
+	</div>
+	<div>
+		<table >
+			<thead>
+				<tr>
+					<th>Employee ID</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Email Id</th>
+					<th>Address</th>
+					<th>Country</th>
+					<th>Gender</th>
+					<th>Joining Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="emp:${employees}">
+					<td th:text="${emp.id}">Employee ID</td>
+					<td th:text="${emp.empName}">Name</td>
+					<td th:text="${emp.age}">Age</td>
+					<td th:text="${emp.email}">Email Id</td>
+					<td th:text="${emp.address}">Address</td>
+					<td th:text="${emp.country}">Country</td>
+					<td th:text="${emp.gender}">Gender</td>
+					<td th:text="${emp.dateOfJoining}">Joining Date</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
+
+
